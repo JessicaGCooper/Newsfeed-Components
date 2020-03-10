@@ -85,30 +85,113 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Debate Rages On: Can Zoom Transmit the Common Cold?',
+    date: 'Nov 5th, 2030',
+    firstParagraph: `Lorem ipsum dolor amet lomo kogi bicycle rights flexitarian biodiesel pabst crucifix small batch, prism neutra 
+        heirloom tbh pug. Try-hard gastropub readymade blue bottle echo park, thundercats mixtape banh mi. Blue bottle shabby chic kale 
+        chips knausgaard pitchfork vice etsy shell of. Food truck retro slow-carb bitters, man braid salvia occupy.`,
+
+    secondParagraph: `Blog skateboard paleo, unicorn activated charcoal twee air plant disrupt meggings meh tbh. Intelligentsia plaid 
+        lumbersexual semiotics iceland. Gentrify live-edge snackwave ramps street art, keffiyeh try-hard messenger bag vape tousled. Affogato 
+        knausgaard dreamcatcher direct trade, raclette humblebrag artisan unicorn sriracha cornhole truffaut vinyl mumblecore chicharrones 
+        PBR&B. Pug swag ramps, leggings vexillologist schlitz occupy.`,
+
+    thirdParagraph: `Umami brooklyn vape, brunch 8-bit health goth chillwave migas distillery narwhal viral beard thundercats fashion axe. Chia 
+        pok pok beard chicharrones, swag raw denim keytar. Blue bottle beard shoreditch, four dollar toast squid try-hard irony artisan raw denim 
+        YOLO. Af art party roof party whatever. Hell of PBR&B actually, fam forage yuccie truffaut scenester deep v poutine la croix four dollar toast. 
+        Four dollar toast raclette fanny pack dreamcatcher mumblecore.`
+  },
+  {
+    title: 'Anxious Students Don\'t Know How to React to React.',
+    date: 'Oct 2nd, 2019',
+    firstParagraph: `Lucas ipsum dolor sit amet ben twi'lek padmé darth darth darth moff hutt organa twi'lek. Ben amidala secura skywalker lando
+        moff wicket tatooine luke.Solo wampa wampa calrissian yoda moff.Darth grievous darth gonk darth hutt.Darth baba skywalker
+        watto fett jango maul han.Mon ewok sidious sidious lando kenobi grievous gamorrean solo.Yoda wedge utapau darth calamari.
+        Hutt calamari darth jabba.Darth dooku amidala organa moff.Boba darth binks solo hutt skywalker dantooine skywalker.Qui - gonn
+        jar twi'lek jinn leia jango skywalker mon.`,
+
+    secondParagraph: `Grievous fett calamari anakin skywalker hutt.Alderaan darth kenobi darth r2- d2
+        windu mothma.Sidious darth calamari moff.Wampa mothma sith wedge solo mara.Darth gonk maul sith moff chewbacca palpatine
+        mace amidala.C - 3po solo skywalker anakin yoda leia.Maul wampa bespin watto jade ewok darth jabba.Lando dantooine moff
+        k - 3po dantooine luke.Fisto mandalore darth wedge c - 3p0 ahsoka.Secura moff palpatine fett.Anakin sith darth darth.Moff
+        solo leia ben ponda jade.Binks jango aayla skywalker skywalker cade.Mustafar darth ventress anakin watto.Yavin jawa sebulba
+        owen jinn tatooine sith organa.`,
+
+    thirdParagraph: `Dagobah hutt jawa leia calamari ventress skywalker yoda. Binks wicket hutt coruscant sidious
+        naboo ackbar tatooine. Hutt lars padmé darth. Maul solo darth darth jabba qui-gon chewbacca darth maul. Moff baba wicket
+        han. C-3po antilles moff qui-gon ahsoka aayla dooku amidala. Palpatine droid amidala droid k-3po twi'lek padmé wookiee. Leia
+        moff calamari mon obi-wan. Solo grievous lando coruscant. Jinn darth palpatine obi-wan mon.`
   }
 ];
 
-/* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
+// Step 1: Create a function that creates a component. You will want your component to look like the template below: 
   
-  <div class="article">
-    <h2>{title of the article}</h2>
-    <p class="date">{date of the article}</p>
+//   <div class="article">
+//     <h2>{title of the article}</h2>
+//     <p class="date">{date of the article}</p>
 
-    {three separate paragraph elements}
+//     {three separate paragraph elements}
 
-    <span class='expandButton'></span>
-  </div>
+//     <span class='expandButton'></span>
+//   </div>
 
-  Hint: You will need to use createElement more than once here!
+//   Hint: You will need to use createElement more than once here!
 
-  Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
+//   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
 
-  Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+const allArticles = document.querySelector('.articles');
 
-  Step 3: return the entire component.
+const createArticle = (title, date, p1, p2, p3) => {
 
-  Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+  //create elements
 
-  Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
+  const article = document.createElement('div');
+  const aTitle = document.createElement('h2');
+  const aDate = document.createElement('p');
+  const aP1 = document.createElement('p');
+  const aP2 = document.createElement('p'); 
+  const aP3 = document.createElement('p');
+  const button = document.createElement('span'); 
 
-*/
+ //set structure
+
+ article.appendChild(aTitle);
+ article.appendChild(aDate);
+ article.appendChild(aP1);
+ article.appendChild(aP2);
+ article.appendChild(aP3);
+ article.appendChild(button);
+
+ //set classes
+
+ article.classList.add('article');
+ aDate.classList.add('date');
+ button.classList.add('expandButton');
+
+ //set content
+
+ aTitle.textContent = title;
+ aDate.textContent = date;
+ aP1.textContent = p1;
+ aP2.textContent = p2;
+ aP3.textContent = p3;
+ button.textContent = "	\u2665"
+
+ //   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
+button.addEventListener('click', (e) => {
+  article.classList.toggle('article-open');
+});
+
+ //   Step 3: return the entire component.
+ return article
+}
+
+//   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
+
+data.forEach((item) => {
+  allArticles.appendChild(createArticle(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph));
+})
+
+//   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
